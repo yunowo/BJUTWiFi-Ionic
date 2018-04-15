@@ -1,0 +1,15 @@
+<div>
+  <svg width="150" height="150" viewBox='0 0 150 150' xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <mask id="mask">
+        <circle cx='75' cy='75' r='72' fill='white'></circle>
+      </mask>
+    </defs>
+    <g fill="#488aff" mask='url(#mask)'>
+      <path [attr.d]="waveLoadingD"></path>
+      <path class="wave_shadow" [attr.d]="waveLoadingShadowD"></path>
+    </g>
+    <text x='50' y='84'>{{progress}} %</text>
+    <circle cx='75' cy='75' stroke-width='3' r='72' stroke='#488aff' fill='none'></circle>
+  </svg>
+</div>

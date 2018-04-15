@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item>
+      <ion-icon name="wifi" item-start></ion-icon>
+      <h2>BJUT Wi-Fi</h2>
+      <p>Ionic Edition</p>
+    </button>
+    <button ion-item>
+      <ion-icon name="information-circle" item-start></ion-icon>
+      <h2>Version</h2>
+      <p>0.1.0</p>
+    </button>
+    <button ion-item (click)="openGitHub()">
+      <ion-icon name="code" item-start></ion-icon>
+      <h2>Source code</h2>
+      <p>https://github.com/yunv/BJUTWiFi-Ionic</p>
+    </button>
+  </ion-list>
+</ion-content>

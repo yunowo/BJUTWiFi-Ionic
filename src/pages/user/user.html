@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      User
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="saveUser($event)">Done</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="userInfo">
+    <ion-item>
+      <ion-label color="primary" floating>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="userInfo.username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="userInfo.password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Package</ion-label>
+      <ion-select [(ngModel)]="userInfo.package">
+        <ion-option value="8">8 GB</ion-option>
+        <ion-option value="25">25 GB</ion-option>
+        <ion-option value="30">30 GB</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+</ion-content>
+

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      BJUT Wi-Fi Ionic
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="doRefresh($event)">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresherRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row no-padding *ngIf="userInfo && stats">
+          <ion-col col-6>
+            <ion-col>
+              <p class="username">{{userInfo.username}}</p>
+              <p>已使用：{{stats.time}} min</p>
+              <p>余额：{{stats.fee}} RMB</p>
+              <p>流量：{{stats.flowFormatted}}</p>
+            </ion-col>
+            <ion-row>
+              <button ion-button (click)="login($event)">登录</button>
+              <button ion-button (click)="logout($event)">注销</button>
+            </ion-row>
+          </ion-col>
+          <ion-col col-6>
+            <page-wave [progress]="getPercent()"></page-wave>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
